@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+:root {
+    --cor-principal: #F2A900;
+    --cor-fundo: #000000c2;
+    --cor-fundo-content: #000000e0;
+    --cor-txt: #FFFFFF;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização navbar lateral */
+.nav-lateral {
+    background-color: var(--cor-fundo);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    border: 1px solid var(--cor-principal);
+}
+
+.nav-lateral .logo-box {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.nav-lateral .logo-box img {
+    padding-left: 5px;
+    width: 140px;
+}
+
+
+.nav-lateral .logo-box i {
+    position: absolute;
+    top: 23px;
+    right: 15px;
+    color: var(--cor-principal);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-lateral ul {list-style-type: none;}
+
+.nav-lateral ul li a.link-navbar {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    padding: 10px 15px 10px ;
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffffffe0;
+    cursor: pointer;
+}
+
+.nav-lateral ul li a.link-navbar i {
+    color: var(--cor-principal);
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+.config-user {
+    margin-top: 235px;
+}
+
+.nav-lateral ul li.active {
+    background-color: var(--cor-principal);
+} 
+
+.nav-lateral ul li.active a.link-navbar, .nav-lateral ul li.active a.link-navbar i {
+    color: black;
+}
+
+
+/* Fim estilização navbar lateral */
+
+/* ----------------------------------------------------------------- */
+
+/* Inicio estilização navbar topo */
+.nav-topo {
+    background-color: var(--cor-fundo);
+    position: fixed;
+    right: 0;
+    width: calc(100vw - 200px);
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--cor-principal);
+}
+
+.nav-topo img {
+    width: 45px;
+    border-radius: 50%;
+}
+
+.nav-topo h1 {
+    color: var(--cor-txt);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-right: 25px;
+}
+/* Fim estilização navbar topo */
+
+/* ----------------------------------------------------------------- */
+
+/* inicio estilização conteudo padrao */
+section.conteudo {
+    position: absolute;
+    background-color: var(--cor-fundo-content);
+    width: calc(100vw - 200px);
+    height: calc(100vh - 60px);
+    right: 0;
+    top: 60px;
+}
+
+/* Fim estilização conteudo padrao */
+
+/* ----------------------------------------------------------------- */
