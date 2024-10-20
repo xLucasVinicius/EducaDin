@@ -68,6 +68,7 @@
 .config-user {
     position: absolute;
     bottom: 20px;
+    width: 100%;
 }
 
 .nav-lateral ul li.active {
