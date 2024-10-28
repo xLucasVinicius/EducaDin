@@ -31,7 +31,7 @@
             </div>
             <ul>
                 <li class="active">
-                    <a href="home.html" class="link-navbar">
+                    <a href="home.php" class="link-navbar">
                         <i class="bi bi-house-door"></i>
                         Home
                     </a>
