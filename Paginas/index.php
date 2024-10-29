@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,9 +32,9 @@
             </div>
             <ul>
                 <li class="">
-                    <a href="?page=home" class="link-navbar">
+                    <a href="?page=dashboard" class="link-navbar">
                         <i class="bi bi-house-door"></i>
-                        Home
+                        Dashboard
                     </a>
                 </li>
                 <li>
@@ -139,8 +139,8 @@
         <?php
             include("config.php");
             switch(@$_REQUEST["page"]){
-                case "home":
-                    include("home.php");
+                case "dashboard":
+                    include("dashboard.php");
                 break;
                 case "lancamentos":
                     include("lancamentos.php");
