@@ -73,6 +73,7 @@
 
 .nav-lateral ul li.active {
     background-color: var(--cor-principal);
+    transition: all .7s ease;
 } 
 
 .nav-lateral ul li.active a.link-navbar, .nav-lateral ul li.active a.link-navbar i {
