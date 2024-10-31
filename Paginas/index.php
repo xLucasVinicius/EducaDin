@@ -137,6 +137,7 @@
 
     <section class="conteudo">  <!-- section conteúdo -->
         <?php
+        ob_start();
             include("config.php");
             switch(@$_REQUEST["page"]){
                 case "dashboard":
@@ -166,8 +167,11 @@
                 case "alterar":
                     include("alterar.php");
                 break;
+                case "login":
+                    include("login.php");
+                break;
                 default:
-                include("login.php");       
+                include("cadastro.php");       
             }
         ?>
     </section> <!-- section conteúdo -->

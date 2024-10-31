@@ -1,8 +1,13 @@
 <?php
-    define('HOST', 'localhost');
-    define('USER','root');
-    define('PASS','');
-    define('BASE','EducaDin');
+    $host = "localhost";
+    $user = "root";
+    $pass = "";
+    $bd = "educadin";
 
-    $conn = new mysqli(HOST,USER,PASS,BASE);
+    $mysqli = new mysqli($host, $user, $pass, $bd);
+
+    if ($mysqli->connect_errno) {
+        echo "Connect failed: " . $mysqli->connect_error; 
+        exit();
+    }
 ?>
