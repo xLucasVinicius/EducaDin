@@ -1,26 +1,8 @@
 <?php 
 include('config.php');
-if(isset($_POST['email'])) {
 
 
-    $arquivo = $_FILES['file'];
-    if($arquivo['error'])
-        die("Falha ao enviar arquivo");
-    if ($arquivo['size'] > 2097152)
-        die("Arquivo muito grande! Max: 2mb");
-    
-
-    $pasta = "../foto-perfil/";
-    $nomeDoArquivo = $arquivo['name'];
-    $novoNomeDoArquivo = uniqid();
-    $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
-
-    if($extensao != 'jpg' && $extensao != 'png')
-        die("Tipo de arquivo não aceito");
-    
-    $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
-    $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
-
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $email = $_POST['email'];
@@ -29,13 +11,37 @@ if(isset($_POST['email'])) {
     $data_nasc = $_POST['data-nasc'];
     $estado = $_POST['estado'];
 
-    if($deu_certo){
-    $mysqli->query("INSERT INTO usuarios (path , nome, sobrenome, email, senha, num_tel, data_nasc, estado) VALUES ('$path','$nome', '$sobrenome', '$email', '$senha', '$num_cel', '$data_nasc', '$estado')");
+    // Upload da foto de perfil
+    if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+        $path = $_FILES['file'];
+        $extensao = strtolower(pathinfo($path['name'], PATHINFO_EXTENSION));
+        $novoNome = uniqid() . '.' . $extensao; // Renomear a foto para evitar conflitos
+        $caminhoUpload = 'foto-perfil/' . $novoNome;
 
+        // Mover o arquivo para a pasta de uploads
+        move_uploaded_file($path['tmp_name'], $caminhoUpload);
     } else {
-        echo "<p>Falha ao enviar arquivo</p>";
+        $caminhoUpload = 'foto-perfil/default.png'; // Caminho da imagem padrão
+    }
+
+    // Verificar se o usuário já existe
+    $sql = "SELECT * FROM usuarios WHERE email='$email'";
+    $result = $mysqli->query($sql);
+
+    if ($result->num_rows > 0) {
+        echo "O email já está registrado.";
+    } else {
+        // Inserir usuário no banco
+        $sql = "INSERT INTO usuarios (path, nome, sobrenome, email, senha, num_tel, data_nasc, estado) VALUES ('$path','$nome', '$sobrenome', '$email', '$senha', '$num_cel', '$data_nasc', '$estado')";
+        if ($mysqli->query($sql) === TRUE) {
+            echo "Registro concluído com sucesso!";
+        } else {
+            echo "Erro: " . $sql . "<br>" . $mysqli->error;
+        }
     }
 }
+
+$mysqli->close();
 ?>
 
 
@@ -47,6 +53,10 @@ if(isset($_POST['email'])) {
 
     * {
         font-family: sans-serif;
+    }
+
+    body {
+        background-color: #3D3D3D;
     }
 
     form {

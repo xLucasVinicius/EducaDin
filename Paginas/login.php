@@ -1,5 +1,5 @@
 <?php 
-
+    session_start();
 if(isset($_POST['email'])){
 
     include('config.php');
@@ -11,7 +11,10 @@ if(isset($_POST['email'])){
 
     $usuario = $sql_exec->fetch_assoc();
     if(password_verify($senha, $usuario['senha'])) {
-        echo "Usuario logado";
+        $_SESSION['nome'] = $usuario['nome'];
+        $_SESSION['sobrenome'] = $usuario['sobrenome'];
+        $_SESSION['file'] = $usuario['path'];
+        header("Location: index.php?page=dashboard");
     } else{
         echo "Falha ao realizar login";
     }
@@ -19,13 +22,14 @@ if(isset($_POST['email'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+
     <form action="" method="post">
         <input type="email" name="email" id="">
         <input type="password" name="senha" id="">

@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Verificar se o usuário está logado
+if (!isset($_SESSION['nome'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,8 +28,8 @@
 <body>
     <section>  <!-- section menu superior -->
         <div class="nav-topo">
-            <img src="../imagens/imagem-perfil.png" alt="">
-            <h1>Nome Usuario</h1>
+            <img src="<?php echo $_SESSION['file'] ?>" alt="">
+            <h1><?php echo $_SESSION['nome']. ' ' .$_SESSION['sobrenome'] ?> </h1>
         </div>
     </section> <!-- section menu superior -->
     
@@ -31,7 +40,7 @@
                 <i class="bi bi-arrow-bar-left"></i>
             </div>
             <ul>
-                <li class="">
+                <li>
                     <a href="?page=dashboard" class="link-navbar">
                         <i class="bi bi-house-door"></i>
                         Dashboard
@@ -129,6 +138,11 @@
                             <i class="bi bi-person-circle"></i>
                             Configurações
                         </a>
+                    <li>
+                        <a href="logout.php" class="link-navbar">
+                            <i class="bi bi-arrow-bar-left"></i>
+                            Logout
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -137,7 +151,6 @@
 
     <section class="conteudo">  <!-- section conteúdo -->
         <?php
-        ob_start();
             include("config.php");
             switch(@$_REQUEST["page"]){
                 case "dashboard":
@@ -166,12 +179,14 @@
                 break;
                 case "alterar":
                     include("alterar.php");
+                case "logout":
+                    include("logout.php");
                 break;
                 case "login":
                     include("login.php");
                 break;
                 default:
-                include("cadastro.php");       
+                include("dashboard.php");       
             }
         ?>
     </section> <!-- section conteúdo -->
