@@ -46,7 +46,6 @@ div.fechado a i {    /* config do icone da navbar lateral */
     height: 60px;
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
 }
 
 .nav-lateral .logo-box img {     /* config da logo na navbar lateral */
