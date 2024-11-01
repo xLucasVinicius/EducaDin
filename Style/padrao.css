@@ -14,7 +14,8 @@
 }
 
 /* Estilização navbar lateral */
-.nav-lateral {
+
+.nav-lateral {      /* config geral da navbar lateral */
     background-color: var(--cor-fundo);
     position: fixed;
     top: 0;
@@ -26,36 +27,36 @@
     transition: all .4s;
 }
 
-div.fechado {
+div.fechado {     /* config geral da navbar lateral fechada */
     width: 60px;
 }
 
-div.fechado a {
+div.fechado a {      /* config do link da navbar lateral */
     visibility: hidden;
     white-space: nowrap;
     overflow: hidden;
 }
 
-div.fechado a i {
+div.fechado a i {    /* config do icone da navbar lateral */
     display: inline ;
     visibility: visible;
 }
 
-.nav-lateral .logo-box {
+.nav-lateral .logo-box {   /* config da div da logo na navbar lateral */
     height: 60px;
     display: flex;
     align-items: center;
     margin-bottom: 30px;
 }
 
-.nav-lateral .logo-box img {
+.nav-lateral .logo-box img {     /* config da logo na navbar lateral */
     padding-left: 5px;
     width: 140px;
     transition: all .2s;
 }
 
 
-.nav-lateral .logo-box i {
+.nav-lateral .logo-box i {    /* config do botão de fechar a navbar lateral */
     position: absolute;
     top: 23px;
     right: 15px;
@@ -66,9 +67,14 @@ div.fechado a i {
     transition: all .2s;
 }
 
-.nav-lateral ul {list-style-type: none;}
+.nav-lateral ul {list-style-type: none;}   /* config geral da lista  da navbar lateral */
 
-.nav-lateral ul li a.link-navbar {
+.nav-lateral ul li.active {   /* config do link ativo da navbar lateral */
+    background-color: var(--cor-principal);
+    transition: all .7s ease;
+} 
+
+.nav-lateral ul li a.link-navbar {  /* config dos links da navbar lateral */
     display: inline-block;
     width: 100%;
     height: 40px;
@@ -79,33 +85,28 @@ div.fechado a i {
     cursor: pointer;
 }
 
-.nav-lateral ul li a.link-navbar i {
+.nav-lateral ul li a.link-navbar i {    /* config dos icones da navbar lateral */
     color: var(--cor-principal);
     font-size: 20px;
     padding-right: 5px;
 }
 
-.config-user {
+.nav-lateral ul li.active a.link-navbar, .nav-lateral ul li.active a.link-navbar i {    /* config do icone e texto no link ativo da navbar lateral */
+    color: black;
+}
+
+.config-user {    /* config da div com as opçõs finais da navbar lateral */
     position: absolute;
     bottom: 20px;
     width: 100%;
 }
-
-.nav-lateral ul li.active {
-    background-color: var(--cor-principal);
-    transition: all .7s ease;
-} 
-
-.nav-lateral ul li.active a.link-navbar, .nav-lateral ul li.active a.link-navbar i {
-    color: black;
-}
-
 
 /* Fim estilização navbar lateral */
 
 /* ----------------------------------------------------------------- */
 
 /* Inicio estilização navbar topo */
+
 .nav-topo {
     background-color: var(--cor-fundo);
     position: fixed;
