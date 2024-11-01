@@ -28,16 +28,18 @@ if (!isset($_SESSION['nome'])) {
 <body>
     <section>  <!-- section menu superior -->
         <div class="nav-topo">
-            <img src="<?php echo $_SESSION['file'] ?>" alt="">
-            <h1><?php echo $_SESSION['nome']. ' ' .$_SESSION['sobrenome'] ?> </h1>
+            <a href="?page=alterar" class="link-perfil">
+                <img src="<?php echo $_SESSION['file'] ?>" alt="">
+                <h1><?php echo $_SESSION['nome']. ' ' .$_SESSION['sobrenome'] ?> </h1>
+            </a>
         </div>
     </section> <!-- section menu superior -->
     
     <section>  <!-- section menu lateral -->
         <div class="nav-lateral">
             <div class="logo-box">
-                <img src="../imagens/logo.png" alt="logo EducaDin">
-                <i class="bi bi-arrow-bar-left"></i>
+                <img src="../imagens/logo.png" alt="logo EducaDin" class="img-logo-nav">
+                <i class="bi bi-arrow-bar-left btn-fechar"></i>
             </div>
             <ul>
                 <li>
@@ -80,30 +82,6 @@ if (!isset($_SESSION['nome'])) {
                     <a href="?page=estudos" class="link-navbar">
                         <i class="bi bi-house-door"></i>
                         Estude Finanças
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Home
                     </a>
                 </li>
                 <li>
@@ -179,6 +157,7 @@ if (!isset($_SESSION['nome'])) {
                 break;
                 case "alterar":
                     include("alterar.php");
+                break;
                 case "logout":
                     include("logout.php");
                 break;

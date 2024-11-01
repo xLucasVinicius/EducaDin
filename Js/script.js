@@ -32,3 +32,38 @@ navLinks.forEach(link => {
 
 // Configura o link ativo na carga da página
 window.onload = setActiveLink;
+
+// Seleciona o botão e a div nav-lateral
+const btnFechar = document.querySelector('.btn-fechar');
+const navLateral = document.querySelector('.nav-lateral');
+const conteudo = document.querySelector('.conteudo');
+const navTopo = document.querySelector('.nav-topo');
+const imgNav = document.querySelector('.img-logo-nav');
+
+
+
+btnFechar.addEventListener('click', function() {
+
+    navLateral.classList.toggle('fechado');
+
+        if (navLateral.classList.contains('fechado')) {
+            conteudo.style.width = 'calc(100vw - 60px)'; 
+            navTopo.style.width = 'calc(100vw - 60px)';
+            imgNav.src = '../imagens/favicon.ico';
+            imgNav.style.width = '50px';
+            btnFechar.style.transform = 'scaleX(-1)';
+            btnFechar.style.right = '-30px';
+        } else {
+            conteudo.style.width = 'calc(100% - 200px)';
+            imgNav.src = '../imagens/logo.png';
+            imgNav.style.width = '140px';
+            btnFechar.style.transform = 'scaleX(1)';
+            btnFechar.style.right = '15px';
+        }
+});
+
+
+// fim script navbar
+
+
+// script 

@@ -16,7 +16,7 @@ if(isset($_POST['email'])){
         $_SESSION['file'] = $usuario['path'];
         header("Location: index.php?page=dashboard");
     } else{
-        echo "Falha ao realizar login";
+        echo "<h1>Falha ao realizar login</h1>";
     }
 }
 ?>
@@ -32,7 +32,7 @@ if(isset($_POST['email'])){
 
     <form action="" method="post">
         <input type="email" name="email" id="">
-        <input type="password" name="senha" id="">
+        <input type="password" name="senha" id="" required>
         <button type="submit">logar</button>
     </form>
     
