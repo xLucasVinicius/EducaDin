@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+:root {
+    --cor-principal: #F2A900;
+    --cor-fundo: #3D3D3D;
+    --cor-fundo-content: #1F1F1F;
+    --cor-txt: #FFFFFF;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Estilização navbar lateral */
+
+.nav-lateral {      /* config geral da navbar lateral */
+    background-color: var(--cor-fundo);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    border: 1px solid var(--cor-principal);
+
+    transition: all .4s;
+}
+
+div.fechado {     /* config geral da navbar lateral fechada */
+    width: 60px;
+}
+
+div.fechado a {      /* config do link da navbar lateral */
+    visibility: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+div.fechado a i {    /* config do icone da navbar lateral */
+    display: inline ;
+    visibility: visible;
+}
+
+.nav-lateral .logo-box {   /* config da div da logo na navbar lateral */
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-lateral .logo-box img {     /* config da logo na navbar lateral */
+    padding-left: 5px;
+    width: 140px;
+    transition: all .2s;
+}
+
+
+.nav-lateral .logo-box i {    /* config do botão de fechar a navbar lateral */
+    position: absolute;
+    top: 23px;
+    right: 15px;
+    color: var(--cor-principal);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.nav-lateral ul {list-style-type: none;}   /* config geral da lista  da navbar lateral */
+
+.nav-lateral ul li.active {   /* config do link ativo da navbar lateral */
+    background-color: var(--cor-principal);
+    transition: all .7s ease;
+} 
+
+.nav-lateral ul li a.link-navbar {  /* config dos links da navbar lateral */
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    padding: 10px 15px 10px ;
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffffffe0;
+    cursor: pointer;
+}
+
+.nav-lateral ul li a.link-navbar i {    /* config dos icones da navbar lateral */
+    color: var(--cor-principal);
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+.nav-lateral ul li.active a.link-navbar, .nav-lateral ul li.active a.link-navbar i {    /* config do icone e texto no link ativo da navbar lateral */
+    color: black;
+}
+
+.config-user {    /* config da div com as opçõs finais da navbar lateral */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+/* Fim estilização navbar lateral */
+
+/* ----------------------------------------------------------------- */
+
+/* Inicio estilização navbar topo */
+
+.nav-topo {
+    background-color: var(--cor-fundo);
+    position: fixed;
+    right: 0;
+    width: calc(100vw - 200px);
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--cor-principal);
+}
+
+.link-perfil {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-topo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nav-topo h1 {
+    color: var(--cor-txt);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-right: 25px;
+}
+/* Fim estilização navbar topo */
+
+/* ----------------------------------------------------------------- */
+
+/* inicio estilização conteudo padrao */
+section.conteudo {
+    position: absolute;
+    background-color: var(--cor-fundo-content);
+    width: calc(100vw - 200px);
+    height: calc(100vh - 60px);
+    right: 0;
+    top: 60px;
+    transition: width .4s;
+}
+
+/* Fim estilização conteudo padrao */
+
+/* ----------------------------------------------------------------- */
