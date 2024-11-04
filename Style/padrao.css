@@ -18,6 +18,9 @@
 
 .nav-lateral {      /* config geral da navbar lateral */
     background-color: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
@@ -93,12 +96,6 @@ div.fechado a i {    /* config do icone da navbar lateral */
 
 .nav-lateral ul li.active a.link-navbar, .nav-lateral ul li.active a.link-navbar i {    /* config do icone e texto no link ativo da navbar lateral */
     color: black;
-}
-
-.config-user {    /* config da div com as opçõs finais da navbar lateral */
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
 }
 
 /* Fim estilização navbar lateral */

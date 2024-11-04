@@ -39,72 +39,74 @@ if (!isset($_SESSION['nome'])) {
     
     <section>  <!-- section menu lateral -->
         <div class="nav-lateral">
-            <div class="logo-box">
-                <img src="../imagens/logo.png" alt="logo EducaDin" class="img-logo-nav">
-                <i class="bi bi-arrow-bar-left btn-fechar"></i>
+            <div class="box-menu-p">
+                <div class="logo-box">
+                    <img src="../imagens/logo.png" alt="logo EducaDin" class="img-logo-nav">
+                    <i class="bi bi-arrow-bar-left btn-fechar"></i>
+                </div>
+                <ul>
+                    <li>
+                        <a href="?page=dashboard" class="link-navbar">
+                            <i class="bi bi-house-door"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?page=lancamentos" class="link-navbar">
+                            <i class="bi bi-graph-up-arrow"></i>
+                            Lançamentos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?page=desempenho" class="link-navbar">
+                            <i class="bi bi-house-door"></i>
+                            Desempenho
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?page=minigames" class="link-navbar">
+                            <i class="bi bi-house-door"></i>
+                            Mini Games
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?page=planos" class="link-navbar">
+                            <i class="bi bi-house-door"></i>
+                            Planos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?page=investimentos" class="link-navbar">
+                            <i class="bi bi-house-door"></i>
+                            Investimentos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?page=estudos" class="link-navbar">
+                            <i class="bi bi-house-door"></i>
+                            Estude Finanças
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link-navbar">
+                            <i class="bi bi-house-door"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link-navbar">
+                            <i class="bi bi-house-door"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link-navbar">
+                            <i class="bi bi-house-door"></i>
+                            Home
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <ul>
-                <li>
-                    <a href="?page=dashboard" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="?page=lancamentos" class="link-navbar">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        Lançamentos
-                    </a>
-                </li>
-                <li>
-                    <a href="?page=desempenho" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Desempenho
-                    </a>
-                </li>
-                <li>
-                    <a href="?page=minigames" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Mini Games
-                    </a>
-                </li>
-                <li>
-                    <a href="?page=planos" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Planos
-                    </a>
-                </li>
-                <li>
-                    <a href="?page=investimentos" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Investimentos
-                    </a>
-                </li>
-                <li>
-                    <a href="?page=estudos" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Estude Finanças
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="link-navbar">
-                        <i class="bi bi-house-door"></i>
-                        Home
-                    </a>
-                </li>
-            </ul>
             <div class="config-user">
                 <ul>
                     <li>
