@@ -27,6 +27,7 @@
     width: 200px;
     height: 100vh;
     border: 1px solid var(--cor-principal);
+    z-index: 99999;
 
     transition: all .4s;
 }
@@ -115,6 +116,7 @@ div.fechado a i {    /* config do icone da navbar lateral */
     align-items: center;
     gap: 15px;
     border: 1px solid var(--cor-principal);
+    z-index: 99999;
 }
 
 .link-perfil {

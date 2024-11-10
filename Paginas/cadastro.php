@@ -45,6 +45,8 @@ $arquivo = $_FILES['file'];
 
 
     * {
+        margin: 0;
+        padding: 0;
         font-family: sans-serif;
     }
 
@@ -57,8 +59,8 @@ $arquivo = $_FILES['file'];
         flex-direction: column;
         flex-wrap: nowrap;
         margin: auto;
-        width: 700px;
-        height: 100%;
+        max-width: 700px;
+        height: 99%;
         justify-content: center;
         align-items: center;
     }
@@ -196,13 +198,97 @@ $arquivo = $_FILES['file'];
         font-size: 1rem;
     }
 
+@media screen and (max-width: 930px){
+
+form {
+    width: 300px;
+    height: 97vh;
+}
+
+form > h1 {
+    font-size: 2rem;
+    margin-bottom: 1%;
+}
+
+label {
+    margin-top: 5px;
+}
+
+span {
+    display: block;
+    
+    
+}    
+.img-perfil img {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+}
+
+
+.input-name, .input-outras-infos {
+    display: block;
+    width: 100%;
+}
+
+.input-login {
+    width: 100%;
+}
+
+#nome, #sobrenome, #data-nasc, #estado {
+    width: 300px;
+}
+
+#btn-input1, #btn-input2 {
+    width: 45%;
+}
+}
+
+@media screen and  (max-width: 500px){
+    form {
+    width: 90vw;
+    padding: 5px;
+}
+
+form > h1 {
+    font-size: 1.3rem;
+}
+
+label {
+    font-size: 15px;
+}
+
+input, #estado {
+    padding: 1.5vh 5px;
+}
+
+.img-perfil img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#nome, #sobrenome, #data-nasc, #estado {
+    width: 200px;
+}
+
+
+
+.input-name, .input-outras-infos {
+display: flex;
+width: 100%;
+}
+}
+
 </style>
+
+
 
 <form action="" method="post" enctype="multipart/form-data">
     <h1>Cadastro</h1>
     <div class="input-img-perfil">
         <div class="img-perfil">
-            <img src="../foto-perfil/default.png" alt="">
+            <img id="imagem-perfil" src="../foto-perfil/default.png" alt="">
         </div>
         <label for="file" class="file-label">
         <i class="bi bi-pencil"></i>
@@ -274,7 +360,22 @@ $arquivo = $_FILES['file'];
         <span id="btn-input1"><button>Cancelar</button></span>
         <span id="btn-input2"><input id="btn-salvar" type="submit" value="Salvar"></span>
     </div>
-
-
-
 </form>
+
+<script>
+document.querySelector('#file').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const profilePic = document.querySelector('#imagem-perfil');
+
+    if (file) {
+        const reader = new FileReader();
+        
+        // Quando a imagem é carregada, a URL é gerada e exibida
+        reader.onload = function(e) {
+            profilePic.src = e.target.result; // Atualiza a imagem
+        };
+        
+        reader.readAsDataURL(file); // Converte o arquivo para uma URL
+    }
+});
+</script>

@@ -16,7 +16,7 @@ if (!isset($_SESSION['nome'])) {
     <!-- css navbar -->
      <link rel="stylesheet" href="../Style/padrao.css">
 
-    <script src="../Js/script.js" async></script>
+    <script src="../Js/nav-bar.js" async></script>
 
     <!-- Bootstrap-Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">

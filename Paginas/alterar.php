@@ -43,9 +43,8 @@ if (isset($_SESSION['id'])) {
         flex-direction: column;
         flex-wrap: nowrap;
         margin: auto;
-        padding: 5px;
-        width: 700px;
-        height: 100%;
+        max-width: 700px;
+        height: 89%;
         justify-content: center;
         align-items: center;
     }
@@ -89,8 +88,8 @@ if (isset($_SESSION['id'])) {
     }
 
     .img-perfil img{
-        width: 170px;
-        height: 170px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
     }
 
@@ -184,6 +183,98 @@ if (isset($_SESSION['id'])) {
         font-size: 1rem;
     }
 
+@media screen and (max-width: 930px){
+
+form {
+    width: 300px;
+    height: 89vh;
+}
+
+form > h1 {
+    font-size: 2rem;
+    margin-bottom: 1%;
+}
+
+label {
+    margin-top: 5px;
+}
+
+span {
+    display: block;
+    
+    
+}    
+.img-perfil img {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+}
+
+.input-name, .input-outras-infos {
+    display: block;
+    width: 100%;
+}
+
+.input-login {
+    width: 100%;
+}
+
+#nome, #sobrenome, #data-nasc, #estado {
+    width: 300px;
+}
+
+#btn-input1, #btn-input2 {
+    width: 45%;
+    
+}
+}
+
+@media screen and  (max-width: 500px){
+
+.file-label {
+    right: -1px;
+    width: 20px;
+    height: 20px;
+}
+
+.file-label i {
+    font-size: 13px;
+}
+
+form {
+    width: 80vw;
+    padding: 5px;
+}
+
+form > h1 {
+    font-size: 1.3rem;
+}
+
+label {
+    font-size: 15px;
+}
+
+input, #estado {
+    padding: 1.5vh 5px;
+}
+
+.img-perfil img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+#nome, #sobrenome, #data-nasc, #estado {
+    width: 180px;
+}
+
+
+
+.input-name, .input-outras-infos {
+display: flex;
+width: 100%;
+}
+}
 </style>
 
 <form action="salvar-usuario.php" method="post" enctype="multipart/form-data">
