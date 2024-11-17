@@ -36,10 +36,15 @@ div.fechado {     /* config geral da navbar lateral fechada */
     width: 60px;
 }
 
+div.fechado li {
+    overflow: hidden;
+}
+
 div.fechado a {      /* config do link da navbar lateral */
     visibility: hidden;
     white-space: nowrap;
     overflow: hidden;
+    transition: all .2s all;
 }
 
 div.fechado a i {    /* config do icone da navbar lateral */
@@ -87,6 +92,9 @@ div.fechado a i {    /* config do icone da navbar lateral */
     font-size: 15px;
     color: #ffffffe0;
     cursor: pointer;
+    white-space: nowrap;
+    
+    
 }
 
 .nav-lateral ul li a.link-navbar i {    /* config dos icones da navbar lateral */

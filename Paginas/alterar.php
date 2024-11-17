@@ -39,6 +39,9 @@ if (isset($_SESSION['id'])) {
     }
 
     form {
+        background-color: rgba(0, 0, 0, 0.50);
+        border-radius: 20px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
