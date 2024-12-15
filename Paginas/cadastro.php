@@ -38,252 +38,16 @@ $arquivo = $_FILES['file'];
 }
 ?>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
-
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-    }
-
-    body {
-        background-color: #1F1F1F;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        margin: auto;
-        max-width: 700px;
-        height: 99%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    form > h1 {
-        font-size: 3rem;
-        font-family: 'orbitron';
-        margin-bottom: 100px;
-        color: #F5A900;
-    }
-
-    label {
-        color: #F5A900;
-        margin-top: 20px;
-    }
-
-    input, #estado {
-        background-color: transparent;
-        color: white;
-        padding: 15px;
-        border: 1.5px solid white;
-        border-radius: 4px;
-    }
-
-    input:focus {
-        color: white;
-        outline: none;
-    }
-
-    input::placeholder {
-        color: white;
-    }
-
-    .img-perfil {
-        display: flex;
-        justify-content: center;
-    }
-
-    .input-img-perfil {
-        position: relative;
-    }
-
-    .img-perfil img{
-        width: 150px;
-        border-radius: 50%;
-    }
-
-    input[type="file"] {
-        display: none;
-    }
-
-    .file-label {
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        position: absolute;
-        bottom: 0;
-        right: 5px;
-        background-color: white;
-        color: black;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-    }
-
-    .file-label i {
-        font-size: 20px;
-    }
-    
-    .input-name, .input-outras-infos {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .input-login {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    #nome, #sobrenome, #data-nasc, #estado {
-        width: 300px;
-    }
-
-    #data-nasc {
-        color: white;
-    }
-
-    #estado {
-        color: white;
-    }
-
-    select option {
-        color: black;
-        background-color: transparent;
-    }
-
-    span > label{
-        display: block;
-
-    }
-
-    .btn-form {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    #btn-input1 {
-        text-align: end;
-    }
-
-    #btn-input1, #btn-input2 {
-        width: 300px;
-    }
-
-    #btn-salvar {
-        background-color: #F5A900;
-        color: white;
-        border: none;
-        padding: 7px;
-        width: 100px;
-        font-size: 1rem;
-    }
-    button {
-        
-        background-color: white;
-        color: #F5A900;
-        padding: 7px;
-        width: 100px;
-        border: #F5A900;
-        border-radius: 4px;
-        font-size: 1rem;
-    }
-
-@media screen and (max-width: 930px){
-
-form {
-    width: 300px;
-    height: 97vh;
-}
-
-form > h1 {
-    font-size: 2rem;
-    margin-bottom: 1%;
-}
-
-label {
-    margin-top: 5px;
-}
-
-span {
-    display: block;
-    
-    
-}    
-.img-perfil img {
-width: 100px;
-height: 100px;
-border-radius: 50%;
-}
-
-
-.input-name, .input-outras-infos {
-    display: block;
-    width: 100%;
-}
-
-.input-login {
-    width: 100%;
-}
-
-#nome, #sobrenome, #data-nasc, #estado {
-    width: 300px;
-}
-
-#btn-input1, #btn-input2 {
-    width: 45%;
-}
-}
-
-@media screen and  (max-width: 500px){
-    form {
-    width: 90vw;
-    padding: 5px;
-}
-
-form > h1 {
-    font-size: 1.3rem;
-}
-
-label {
-    font-size: 15px;
-}
-
-input, #estado {
-    padding: 1.5vh 5px;
-}
-
-.img-perfil img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
-#nome, #sobrenome, #data-nasc, #estado {
-    width: 200px;
-}
-
-
-
-.input-name, .input-outras-infos {
-display: flex;
-width: 100%;
-}
-}
-
-</style>
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../Style/cadastro.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
 <form action="" method="post" enctype="multipart/form-data">
     <h1>Cadastro</h1>
     <div class="input-img-perfil">
@@ -314,8 +78,8 @@ width: 100%;
         <label for="senha">Senha</label>
         <input type="password" name="senha" id="senha" placeholder="digite sua senha" required>
 
-        <label for="telefone">Número</label>
-        <input type="tel" name="telefone" id="telefone" placeholder="11 99999-9999" required>
+        <label for="senha">Confirmar Senha</label>
+        <input type="password" name="senha" id="confirmarsenha" placeholder="digite sua senha novamente" required>
     </div>
     <div class="input-outras-infos">
         <span>
@@ -324,36 +88,8 @@ width: 100%;
         </span>
 
         <span>
-            <label for="estado">Estado</label>
-            <select name="estado" id="estado">
-                <option value="Acre">Acre</option>
-                <option value="Alagoas">Alagoas</option>
-                <option value="Amapá">Amapá</option>
-                <option value="Amazonas">Amazonas</option>
-                <option value="Bahia">Bahia</option>
-                <option value="Ceará">Ceará</option>
-                <option value="Distrito Federal">Distrito Federal</option>
-                <option value="Espírito Santo">Espírito Santo</option>
-                <option value="Goiás">Goiás</option>
-                <option value="Maranhão">Maranhão</option>
-                <option value="Mato Grosso">Mato Grosso</option>
-                <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-                <option value="Minas Gerais">Minas Gerais</option>
-                <option value="Pará">Pará</option>
-                <option value="Paraíba">Paraíba</option>
-                <option value="Paraná">Paraná</option>
-                <option value="Pernambuco">Pernambuco</option>
-                <option value="Piauí">Piauí</option>
-                <option value="Rio de Janeiro">Rio de Janeiro</option>
-                <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-                <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-                <option value="Rondônia">Rondônia</option>
-                <option value="Roraima">Roraima</option>
-                <option value="Santa Catarina">Santa Catarina</option>
-                <option value="São Paulo">São Paulo</option>
-                <option value="Sergipe">Sergipe</option>
-                <option value="Tocantins">Tocantins</option>
-            </select>
+        <label for="telefone">Número</label>
+        <input type="tel" name="telefone" id="telefone" placeholder="11 99999-9999" required>
         </span>
     </div>
     <div class="btn-form">
@@ -362,20 +98,8 @@ width: 100%;
     </div>
 </form>
 
-<script>
-document.querySelector('#file').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    const profilePic = document.querySelector('#imagem-perfil');
+<script src="../Js/cadastro.js"></script>
+</body>
+</html>
 
-    if (file) {
-        const reader = new FileReader();
-        
-        // Quando a imagem é carregada, a URL é gerada e exibida
-        reader.onload = function(e) {
-            profilePic.src = e.target.result; // Atualiza a imagem
-        };
-        
-        reader.readAsDataURL(file); // Converte o arquivo para uma URL
-    }
-});
-</script>
+

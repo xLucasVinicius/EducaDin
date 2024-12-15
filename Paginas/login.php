@@ -30,17 +30,36 @@ if(isset($_POST['email'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="../Style/login.css">
 </head>
 <body>
 
-    <form action="" method="post">
-        <h1>Login</h1>
-        <input type="email" name="email" id="email">
-        <input type="password" name="senha" id="email" required>
-        <button type="submit">logar</button>
+    <div class="content">
+        <form action="" method="post">
+            <h1>Educa<span id="titulo">Din</span></h1>
+            <label for="email">Endereço de Email</label>
+            <input class="input" type="email" name="email" id="email" placeholder="exemplo@mail.com">
+            
+                <label for="senha">Senha</label>
+            
+            <input class="input" type="password" name="senha" id="senha" required placeholder="********">
+            <span id="remember-box">
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember" id="remember-label">Manter conectado</label>
+            </span>
+            <input type="submit" value="Login">
+            <a href="#">Esqueci a senha</a>
+        </form>
+        <div class="login-google">
+            <span class="linha1"></span>
+            <span class="linha2"></span>
+            <p>Acessar com</p>
+            <!-- Aqui vem botao de login com o google -->
+             <button>login com o google</button>
+        </div>
+        
         <a href="cadastro.php">Realizar cadastro</a>
-    </form>
-    
+    </div>
 </body>
 </html>

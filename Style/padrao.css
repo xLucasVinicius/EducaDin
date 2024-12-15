@@ -44,7 +44,7 @@ div.fechado a {      /* config do link da navbar lateral */
     visibility: hidden;
     white-space: nowrap;
     overflow: hidden;
-    transition: all .2s all;
+    transition: all .5s ;
 }
 
 div.fechado a i {    /* config do icone da navbar lateral */
@@ -93,8 +93,12 @@ div.fechado a i {    /* config do icone da navbar lateral */
     color: #ffffffe0;
     cursor: pointer;
     white-space: nowrap;
+    transition: all .2s;
     
-    
+}
+
+.nav-lateral ul li a.link-navbar:hover {
+    color: rgba(255, 255, 255, 0.562);
 }
 
 .nav-lateral ul li a.link-navbar i {    /* config dos icones da navbar lateral */
