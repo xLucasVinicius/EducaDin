@@ -54,6 +54,10 @@ label, span {
     padding-bottom: 5px;
 }
 
+span {
+    position: relative;
+}
+
 label {
     color: var(--cor-principal);
     transition: all .3s;
@@ -61,6 +65,22 @@ label {
 
 label:hover {
     color: #b88100;
+}
+
+d {
+    position: absolute;
+    top: 60px;
+    right: 160px;
+    visibility: hidden;
+}
+
+span.error .input {
+    border-color: red;
+}
+
+span.error d {
+    color: red;
+    visibility: visible;
 }
 
 .input {
@@ -124,6 +144,7 @@ input[type="submit"] {
     border-radius: 7px;
     margin-top: 30px;
     margin-bottom: 25px;
+    border: none;
     transition: all .2s;
 }
 
